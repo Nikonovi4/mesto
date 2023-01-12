@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/pages/index.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto</title>
+</head>
+
+<body class="main">
+    <header class="header">
+        <img class="header__logo" src="/images/logo/logo_white.png" alt="Место. Россия. Логотип.">
+    </header>
+    <section class="profile section">
+        <img src="/images/image.jpg" class="profile__foto" alt="аватар профиля">
+        <div class="profile__name-edit">
+            <h1 class="profile__name">Жак-Ив Кусто</h1><button class="profile__edit-button"></button>
+        </div>
+        <h2 class="profile__activity">Исследователь океана</h2>
+        <button class="profile__add-content-button"></button>
+    </section>
+    <ul class="foto section">
+        <li class="card">
+            <img class="card__foto" src="/images/kirill-pershin-1088404-unsplash.jpg"
+                alt="Старинная церковь, на фоне гор.">
+            <div class="card__data">
+                <h2 class="card__name">Карачаевск</h2>
+                <button class="card__like"></button>
+            </div>
+        </li>
+        <li class="card">
+            <img class="card__foto" src="/images/kirill-pershin-1404681-unsplash.png"
+                alt="Поле, а над горизонтом возвышается вершина горы Эльбрус.">
+            <div class="card__data">
+                <h2 class="card__name">Гора Эльбрус</h2>
+                <button class="card__like"></button>
+            </div>
+        </li>
+        <li class="card">
+            <img class="card__foto" src="/images/kirill-pershin-1556355-unsplash.png"
+                alt="Вершина горы возвышается над лесом.">
+            <div class="card__data">
+                <h2 class="card__name">Домбай</h2>
+                <button class="card__like"></button>
+            </div>
+        </li>
+        <li class="card">
+            <img class="card__foto" src="/images/dmitry-tur-5sPYYR6lG28-unsplash.jpg"
+                alt="Путь к старой церкви через горы.">
+            <div class="card__data">
+                <h2 class="card__name">Карачаево-Черкесия</h2>
+                <button class="card__like"></button>
+            </div>
+        </li>
+        <li class="card">
+            <img class="card__foto" src="/images/gleb-lucky-7SF0nk9ddbY-unsplash.jpg"
+                alt="старинная церковь, на фоне гор.">
+            <div class="card__data">
+                <h2 class="card__name">Карачаевск</h2>
+                <button class="card__like"></button>
+            </div>
+        </li>
+        <li class="card">
+            <img class="card__foto" src="/images/irina-shishkina-WOZ0pBlkZ4A-unsplash.jpg"
+                alt="старинная церковь, на фоне гор.">
+            <div class="card__data">
+                <h2 class="card__name">Карачаевск</h2>
+                <button class="card__like"></button>
+            </div>
+        </li>
+    </ul>
+    <footer class="footer section">
+        <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
+    </footer>
+    <div class="popup popup_close">
+        <div class="popup__content">
+            <button class="popup__close-button"></button>
+            <form class="popup__form">
+                <h2 class="popup__title">Редактировать профиль</h2>
+                <input type="text" class="popup__name popup__input">
+                <input type="text" class="popup__activity popup__input">
+                <button class="popup__save" type="submit">Соханить</button>
+            </form>
+        </div>
+    </div>
+    <script src="/index.js"></script>
+</body>
+
+</html>

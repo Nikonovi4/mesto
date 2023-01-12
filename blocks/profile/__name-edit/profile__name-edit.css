@@ -1,0 +1,14 @@
+.profile__name-edit {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    grid-area: name;
+    margin-top: 20px;
+}
+
+@media screen and (min-width: 880px) {
+    .profile__name-edit {
+        justify-self: start;
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,23 @@
+.profile__activity {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: 500px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+    grid-area: activity;
+}
+
+@media screen and (min-width: 880px) {
+    .profile__activity {
+        font-size: 18px;
+        line-height: 22px;
+        justify-self: start;
+        margin-bottom: 15px;
+    }
+}

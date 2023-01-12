@@ -1,0 +1,13 @@
+.popup__content {
+    width: 282px;
+    min-height: 322px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+@media screen and (min-width: 880px) {
+    .popup__content {
+        width: 430px;
+        min-height: 330px;
+    }
+}
