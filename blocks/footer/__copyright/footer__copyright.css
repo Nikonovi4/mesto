@@ -1,5 +1,5 @@
 .footer__copyright {
-    margin-top: 10px;
+    margin-top: 46px;
     margin-bottom: 0;
     font-weight: 400;
     font-size: 14px;
@@ -11,5 +11,6 @@
     .footer__copyright {
         font-size: 18px;
         line-height: 22px;
+        margin-top: 82px;
     }
 }

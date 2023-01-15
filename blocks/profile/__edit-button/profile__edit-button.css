@@ -2,7 +2,7 @@
     width: 18px;
     height: 18px;
     box-sizing: border-box;
-    background-image: url(../../../images/logo/pen.png);
+    background-image: url(../../../images/logo/pen.svg);
     background-color: #000;
     background-position: center;
     background-size: 7.5px 7.5px;
@@ -14,14 +14,15 @@
     cursor: pointer;
 }
 
-.profile__edit-button:hover {
-    opacity: .6;
-}
-
 @media screen and (min-width: 880px) {
     .profile__edit-button {
         width: 24px;
         height: 24px;
         background-size: 10px 10px;
     }
+}
+
+.profile__edit-button:hover {
+    opacity: .6;
+    transition: .3s;
 }

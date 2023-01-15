@@ -2,7 +2,7 @@
     width: 282px;
     height: 50px;
     background-color: #000;
-    background-image: url(../../../images/logo/plus.png);
+    background-image: url(../../../images/logo/plus.svg);
     background-size: 16px 16px;
     background-repeat: no-repeat;
     background-position: center;
@@ -15,10 +15,6 @@
     grid-area: button;
 }
 
-.profile__add-content-button:hover {
-    opacity: .6;
-}
-
 @media screen and (min-width: 880px) {
     .profile__add-content-button {
         width: 150px;
@@ -26,4 +22,9 @@
         background-size: 22px 22px;
         align-self: baseline;
     }
+}
+
+.profile__add-content-button:hover {
+    opacity: .6;
+    transition: .3s;
 }

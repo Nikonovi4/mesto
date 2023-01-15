@@ -5,7 +5,7 @@
     color: #fff;
     margin-top: 0;
     margin-bottom: 0;
-    max-width: 500px;
+    max-width: 90vw;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -19,5 +19,6 @@
         line-height: 22px;
         justify-self: start;
         margin-bottom: 15px;
+        max-width: 500px;
     }
 }
