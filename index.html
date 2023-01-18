@@ -13,76 +13,82 @@
     <header class="header">
         <img class="header__logo" src="./images/logo/logo-white.svg" alt="Место. Россия. Логотип.">
     </header>
-    <section class="profile section">
-        <img src="./images/image.jpg" class="profile__foto" alt="аватар профиля">
-        <div class="profile__name-edit">
-            <h1 class="profile__name">Жак-Ив Кусто</h1><button class="profile__edit-button" type="button"></button>
-        </div>
-        <p class="profile__activity">Исследователь океана</p>
-        <button class="profile__add-content-button" type="button"></button>
-    </section>
-    <section class="section">
-        <ul class="foto">
-            <li class="card">
-                <img class="card__photo" src="./images/kirill-pershin-1088404-unsplash.jpg"
-                    alt="Старинная церковь, на фоне гор.">
-                <div class="card__data">
-                    <h2 class="card__name">Карачаевск</h2>
-                    <button class="card__like" type="button"></button>
-                </div>
-            </li>
-            <li class="card">
-                <img class="card__photo" src="./images/kirill-pershin-1404681-unsplash.png"
-                    alt="Поле, а над горизонтом возвышается вершина горы Эльбрус.">
-                <div class="card__data">
-                    <h2 class="card__name">Гора Эльбрус</h2>
-                    <button class="card__like" type="button"></button>
-                </div>
-            </li>
-            <li class="card">
-                <img class="card__photo" src="./images/kirill-pershin-1556355-unsplash.png"
-                    alt="Вершина горы возвышается над лесом.">
-                <div class="card__data">
-                    <h2 class="card__name">Домбай</h2>
-                    <button class="card__like" type="button"></button>
-                </div>
-            </li>
-            <li class="card">
-                <img class="card__photo" src="./images/dmitry-tur-5sPYYR6lG28-unsplash.jpg"
-                    alt="Путь к старой церкви через горы.">
-                <div class="card__data">
-                    <h2 class="card__name">Карачаево-Черкесия</h2>
-                    <button class="card__like" type="button"></button>
-                </div>
-            </li>
-            <li class="card">
-                <img class="card__photo" src="./images/gleb-lucky-7SF0nk9ddbY-unsplash.jpg"
-                    alt="старинная церковь, на фоне гор.">
-                <div class="card__data">
-                    <h2 class="card__name">Карачаевск</h2>
-                    <button class="card__like" type="button"></button>
-                </div>
-            </li>
-            <li class="card">
-                <img class="card__photo" src="./images/irina-shishkina-WOZ0pBlkZ4A-unsplash.jpg"
-                    alt="старинная церковь, на фоне гор.">
-                <div class="card__data">
-                    <h2 class="card__name">Карачаевск</h2>
-                    <button class="card__like" type="button"></button>
-                </div>
-            </li>
-        </ul>
-    </section>
-    <footer class="footer section">
+    <main>
+        <section class="profile lead">
+            <img src="./images/image.jpg" class="profile__foto" alt="аватар профиля">
+            <div class="profile__name-edit">
+                <h1 class="profile__name">Жак-Ив Кусто</h1><button aria-label="кнопка редактирования профиля."
+                    class="profile__edit-button" type="button"></button>
+            </div>
+            <p class="profile__activity">Исследователь океана</p>
+            <button aria-label="кнопка добавления фотографий." class="profile__add-content-button"
+                type="button"></button>
+        </section>
+        <section class="content">
+            <ul class="foto">
+                <li class="card">
+                    <img class="card__photo" src="./images/kirill-pershin-1088404-unsplash.jpg"
+                        alt="Старинная церковь, на фоне гор.">
+                    <div class="card__data">
+                        <h2 class="card__name">Карачаевск</h2>
+                        <button aria-label="кнопка отметкв нравится." class="card__like" type="button"></button>
+                    </div>
+                </li>
+                <li class="card">
+                    <img class="card__photo" src="./images/kirill-pershin-1404681-unsplash.png"
+                        alt="Поле, а над горизонтом возвышается вершина горы Эльбрус.">
+                    <div class="card__data">
+                        <h2 class="card__name">Гора Эльбрус</h2>
+                        <button aria-label="кнопка отметкв нравится." class="card__like" type="button"></button>
+                    </div>
+                </li>
+                <li class="card">
+                    <img class="card__photo" src="./images/kirill-pershin-1556355-unsplash.png"
+                        alt="Вершина горы возвышается над лесом.">
+                    <div class="card__data">
+                        <h2 class="card__name">Домбай</h2>
+                        <button aria-label="кнопка отметкв нравится." class="card__like" type="button"></button>
+                    </div>
+                </li>
+                <li class="card">
+                    <img class="card__photo" src="./images/dmitry-tur-5sPYYR6lG28-unsplash.jpg"
+                        alt="Путь к старой церкви через горы.">
+                    <div class="card__data">
+                        <h2 class="card__name">Карачаево-Черкесия</h2>
+                        <button aria-label="кнопка отметкв нравится." class="card__like" type="button"></button>
+                    </div>
+                </li>
+                <li class="card">
+                    <img class="card__photo" src="./images/gleb-lucky-7SF0nk9ddbY-unsplash.jpg"
+                        alt="старинная церковь, на фоне гор.">
+                    <div class="card__data">
+                        <h2 class="card__name">Карачаевск</h2>
+                        <button aria-label="кнопка отметкв нравится." class="card__like" type="button"></button>
+                    </div>
+                </li>
+                <li class="card">
+                    <img class="card__photo" src="./images/irina-shishkina-WOZ0pBlkZ4A-unsplash.jpg"
+                        alt="старинная церковь, на фоне гор.">
+                    <div class="card__data">
+                        <h2 class="card__name">Карачаевск</h2>
+                        <button class="card__like" type="button"></button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer class="footer">
         <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
     </footer>
     <div class="popup">
         <div class="popup__container">
-            <button class="popup__close-button" type="button"></button>
+            <button aria-label="кнопка закрытия всплывающего окна." class="popup__close-button" type="button"></button>
             <form name="profile-edit" class="popup__form">
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <input type="text" name="profile-edit" class="popup__input_content_name popup__input">
-                <input type="text" name="profile-edit" class="popup__input_content_activity popup__input">
+                <input type="text" required placeholder="Ваше имя" name="profile-edit"
+                    class="popup__input_content_name popup__input">
+                <input type="text" required placeholder="Ваш вид деятельности" name="profile-edit"
+                    class="popup__input_content_activity popup__input">
                 <button class="popup__save" type="submit">Сохранить</button>
             </form>
         </div>
