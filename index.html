@@ -26,54 +26,6 @@
         </section>
         <section class="content">
             <ul class="foto">
-                <li class="card">
-                    <img class="card__photo" src="./images/kirill-pershin-1088404-unsplash.jpg"
-                        alt="Старинная церковь, на фоне гор.">
-                    <div class="card__data">
-                        <h2 class="card__name">Карачаевск</h2>
-                        <button aria-label="кнопка отметкв нравится." class="card__like" type="button"></button>
-                    </div>
-                </li>
-                <li class="card">
-                    <img class="card__photo" src="./images/kirill-pershin-1404681-unsplash.png"
-                        alt="Поле, а над горизонтом возвышается вершина горы Эльбрус.">
-                    <div class="card__data">
-                        <h2 class="card__name">Гора Эльбрус</h2>
-                        <button aria-label="кнопка отметкв нравится." class="card__like" type="button"></button>
-                    </div>
-                </li>
-                <li class="card">
-                    <img class="card__photo" src="./images/kirill-pershin-1556355-unsplash.png"
-                        alt="Вершина горы возвышается над лесом.">
-                    <div class="card__data">
-                        <h2 class="card__name">Домбай</h2>
-                        <button aria-label="кнопка отметкв нравится." class="card__like" type="button"></button>
-                    </div>
-                </li>
-                <li class="card">
-                    <img class="card__photo" src="./images/dmitry-tur-5sPYYR6lG28-unsplash.jpg"
-                        alt="Путь к старой церкви через горы.">
-                    <div class="card__data">
-                        <h2 class="card__name">Карачаево-Черкесия</h2>
-                        <button aria-label="кнопка отметкв нравится." class="card__like" type="button"></button>
-                    </div>
-                </li>
-                <li class="card">
-                    <img class="card__photo" src="./images/gleb-lucky-7SF0nk9ddbY-unsplash.jpg"
-                        alt="старинная церковь, на фоне гор.">
-                    <div class="card__data">
-                        <h2 class="card__name">Карачаевск</h2>
-                        <button aria-label="кнопка отметкв нравится." class="card__like" type="button"></button>
-                    </div>
-                </li>
-                <li class="card">
-                    <img class="card__photo" src="./images/irina-shishkina-WOZ0pBlkZ4A-unsplash.jpg"
-                        alt="старинная церковь, на фоне гор.">
-                    <div class="card__data">
-                        <h2 class="card__name">Карачаевск</h2>
-                        <button class="card__like" type="button"></button>
-                    </div>
-                </li>
             </ul>
         </section>
     </main>
@@ -93,7 +45,41 @@
             </form>
         </div>
     </div>
+    <div class="popup popup_add-photo">
+        <div class="popup__container">
+            <button aria-label="кнопка закрытия всплывающего окна." class="popup__close-button" type="button"></button>
+            <form name="add-photo" class="popup__form">
+                <h2 class="popup__title">Новое место</h2>
+                <input type="text" required placeholder="Название" name="add-photo"
+                    class="popup__input_card_name popup__input">
+                <input type="text" required placeholder="Ссылка на картинку" name="add-photo"
+                    class="popup__input_card_link popup__input">
+                <button class="popup__save popup__add-photo" type="submit">Создать</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup popup_dark popup__big-photo">
+        <figure class="popup__figure">
+            <button aria-label="кнопка закрытия всплывающего окна." class="popup__close-button" type="button"></button>
+            <img class="popup__photo">
+            <figcaption class="popup__photo-name"></figcaption>
+        </figure>
+
+    </div>
+
+    <template id="card-template">
+        <li class="card">
+            <button aria-label="кнопка удаления фотографии." class="card__del-btn" type="button"></button>
+            <img class="card__photo">
+            <div class="card__data">
+                <h2 class="card__name"></h2>
+                <button aria-label="кнопка нравится." class="card__like" type="button"></button>
+            </div>
+        </li>
+
+    </template>
     <script src="./scripts/index.js"></script>
+
 </body>
 
 </html>
