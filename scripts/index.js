@@ -18,33 +18,6 @@ const newCardName = document.querySelector('.popup__input_card_name');
 const newCardLink = document.querySelector('.popup__input_card_link');
 const addPhotoButton = document.querySelector('.popup__add-photo')
 
-function openPopup() {
-    popup.classList.add('popup_open');
-}
-
-function autofillPopup() {
-    nameInput.value = profileName.textContent;
-    activityInput.value = pofileActivity.textContent;
-    openPopup();
-}
-
-editButtom.addEventListener('click', autofillPopup);
-
-function closePopup() {
-    popup.classList.remove('popup_open');
-}
-
-closePopupButton.addEventListener('click', closePopup);
-
-function handleFormSubmit(evt) {
-    evt.preventDefault();
-    profileName.textContent = nameInput.value;
-    pofileActivity.textContent = activityInput.value;
-    closePopup();
-}
-
-formElement.addEventListener('submit', handleFormSubmit);
-
 const initialCards = [
     {
         name: 'Архыз',
@@ -72,7 +45,32 @@ const initialCards = [
     }
 ];
 
-// загрузка фото
+function openPopup() {
+    popup.classList.add('popup_open');
+}
+
+function autofillPopup() {
+    nameInput.value = profileName.textContent;
+    activityInput.value = pofileActivity.textContent;
+    openPopup();
+}
+
+editButtom.addEventListener('click', autofillPopup);
+
+function closePopup() {
+    popup.classList.remove('popup_open');
+}
+
+closePopupButton.addEventListener('click', closePopup);
+
+function handleFormSubmit(evt) {
+    evt.preventDefault();
+    profileName.textContent = nameInput.value;
+    pofileActivity.textContent = activityInput.value;
+    closePopup();
+}
+
+formElement.addEventListener('submit', handleFormSubmit);
 
 function addCard(nameCard, linkCard) {
     const cardTemplate = document.querySelector('#card-template').content;
@@ -88,35 +86,32 @@ function addCard(nameCard, linkCard) {
     photo.src = linkCard;
     photo.alt = nameCard;
     photoContainer.prepend(cardElement);
-    
-    cardElement.querySelector('.card__del-btn').addEventListener('click', ()=>{
+
+    cardElement.querySelector('.card__del-btn').addEventListener('click', () => {
         cardElement.remove();
     });
 
     like.addEventListener('click', () => {
         like.classList.add('card__like_clicked');
     })
-    
+
     photo.addEventListener('click', () => {
         bigPhoto.src = linkCard;
         bigPhotoName.textContent = nameCard;
         popupBigPhoto.classList.add('popup_open');
     });
-    
+
     bigPhotoClose.addEventListener('click', () => {
         popupBigPhoto.classList.remove('popup_open');
     });
-    
 }
 
-// обработка стартового массива
 for (let i = 0; i < initialCards.length; ++i) {
     let nameCard = initialCards[i].name;
     let linkCard = initialCards[i].link;
-    
+
     addCard(nameCard, linkCard);
 }
-// попап для добавления фото
 
 function openPopupAddPhoto() {
     popupAddPhoto.classList.add('popup_open');
@@ -129,6 +124,7 @@ const closePopupAddPhotoButton = popupAddPhoto.querySelector('.popup__close-butt
 function closePopupAddPhoto() {
     popupAddPhoto.classList.remove('popup_open');
 }
+
 closePopupAddPhotoButton.addEventListener('click', closePopupAddPhoto);
 
 
@@ -137,8 +133,7 @@ function addNewCard(evt) {
     let nameCard = newCardName.value;
     let linkCard = newCardLink.value;
     addCard(nameCard, linkCard);
-    //formElement.reset();
     closePopupAddPhoto();
 }
-addPhotoButton.addEventListener('click', addNewCard);
 
+addPhotoButton.addEventListener('click', addNewCard);
