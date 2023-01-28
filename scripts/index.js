@@ -76,7 +76,7 @@ function addCard(nameCard, linkCard) {
     const cardTemplate = document.querySelector('#card-template').content;
     const cardElement = cardTemplate.querySelector('.card').cloneNode(true);
     const photo = cardElement.querySelector('.card__photo');
-    const popupBigPhoto = document.querySelector('.popup__big-photo');
+    const popupBigPhoto = document.querySelector('.popup__bigphoto');
     const bigPhoto = popupBigPhoto.querySelector('.popup__photo');
     const bigPhotoName = popupBigPhoto.querySelector('.popup__photo-name');
     const like = cardElement.querySelector('.card__like')
