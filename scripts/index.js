@@ -1,5 +1,5 @@
 const editButton = document.querySelector('.profile__edit-button');
-const popupEditProfile = document.querySelector('.popup__edit-profile');
+const popupEditProfile = document.querySelector('.popup_profile');
 const closePopupEditProfile = document.querySelector('.popup__close-button');
 
 const formEditProfile = popupEditProfile.querySelector('.popup__form');
@@ -26,7 +26,7 @@ const bigSizePhoto = popupBigSizePhoto.querySelector('.popup__photo');
 const bigSizePhotoName = popupBigSizePhoto.querySelector('.popup__photo-name');
 const bigSizePhotoClose = popupBigSizePhoto.querySelector('.popup__close-button');
 
-const formNewPhoto = document.querySelector('.popup_newphoto');
+const formNewPhoto = document.querySelector('.popup__newphoto');
 
 function openPopup(element) {
     element.classList.add('popup_opened');
