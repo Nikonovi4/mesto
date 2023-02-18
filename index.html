@@ -18,10 +18,10 @@
             <img src="./images/image.jpg" class="profile__foto" alt="аватар профиля">
             <div class="profile__name-edit">
                 <h1 class="profile__name">Жак-Ив Кусто</h1><button aria-label="кнопка редактирования профиля."
-                    class="profile__edit-button" type="button"></button>
+                    class="profile__edit-button form__open-button" type="button"></button>
             </div>
             <p class="profile__activity">Исследователь океана</p>
-            <button aria-label="кнопка добавления фотографий." class="profile__add-content-button"
+            <button aria-label="кнопка добавления фотографий." class="profile__add-content-button form__open-button"
                 type="button"></button>
         </section>
         <section class="content">
@@ -35,26 +35,43 @@
     <div class="popup popup_profile">
         <div class="popup__container">
             <button aria-label="кнопка закрытия всплывающего окна." class="popup__close-button" type="button"></button>
-            <form name="profile-edit" class="popup__form">
+            <form name="profile-edit" class="popup__form" novalidate>
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <input type="text" required placeholder="Ваше имя" name="profile-edit"
-                    class="popup__input_content_name popup__input">
-                <input type="text" required placeholder="Ваш вид деятельности" name="profile-edit"
-                    class="popup__input_content_activity popup__input">
-                <button class="popup__save" type="submit">Сохранить</button>
+                <fieldset class="popup__fieldset">
+                    <label>
+                        <input type="text" required placeholder="Ваше имя" name="popup__input_content_name"
+                            class="popup__input_content_name popup__input" minlength="2" maxlength="40">
+                        <span class="popup__error-element popup__input_content_name-error"></span>
+                    </label>
+                    <label>
+                        <input type="text" required placeholder="Ваш вид деятельности"
+                            name="popup__input_content_activity" class="popup__input_content_activity popup__input"
+                            minlength="2" maxlength="400">
+                        <span class="popup__error-element popup__input_content_activity-error"></span>
+                    </label>
+                    <button class="popup__save" type="submit">Сохранить</button>
+                </fieldset>
             </form>
         </div>
     </div>
     <div class="popup popup_add-photo">
         <div class="popup__container">
             <button aria-label="кнопка закрытия всплывающего окна." class="popup__close-button" type="button"></button>
-            <form name="add-photo" class='popup__form popup__newphoto'>
+            <form name="add-photo" class='popup__form popup__newphoto' novalidate>
                 <h2 class="popup__title">Новое место</h2>
-                <input type="text" required placeholder="Название" name="add-photo"
-                    class="popup__input_card_name popup__input">
-                <input type="text" required placeholder="Ссылка на картинку" name="add-photo"
-                    class="popup__input_card_link popup__input">
-                <button class="popup__save popup__add-photo-button" type="submit">Создать</button>
+                <fieldset class="popup__fieldset">
+                    <label>
+                        <input type="text" required placeholder="Название" name="popup__input_card_name"
+                            class="popup__input_card_name popup__input" minlength="2" maxlength="30">
+                        <span class="popup__error-element popup__input_card_name-error popup__error-text"></span>
+                    </label>
+                    <label>
+                        <input type="url" required placeholder="Ссылка на картинку" name="popup__input_card_link"
+                            class="popup__input_card_link popup__input">
+                        <span class="popup__error-element popup__input_card_link-error popup__error-text"></span>
+                    </label>
+                    <button class="popup__save popup__add-photo-button" type="submit">Создать</button>
+                </fieldset>
             </form>
         </div>
     </div>
@@ -78,6 +95,7 @@
         </li>
 
     </template>
+    <script src="./scripts/validate.js"></script>
     <script src="./scripts/cards.js"></script>
     <script src="./scripts/index.js"></script>
 
