@@ -29,6 +29,10 @@ const openPopup = (element) =>{
     element.classList.add('popup_opened');
     document.addEventListener('keydown', closePopupByEsc)
 }
+const closePopup = (element) => {
+    element.classList.remove('popup_opened');
+    document.removeEventListener('keydown', closePopupByEsc)
+}
 
 const closePopupByEsc = (evt) => {
     if (evt.key === 'Escape') {
@@ -36,11 +40,6 @@ const closePopupByEsc = (evt) => {
         closePopup(openedPopup);
     }
 };
-
-const closePopup = (element) => {
-    element.classList.remove('popup_opened');
-    document.removeEventListener('keydown', closePopupByEsc)
-}
 
 function autofillPopup() {
     nameInput.value = profileName.textContent;
@@ -92,7 +91,6 @@ initialCards.forEach(function (item) {
     
     renderCard(nameCard, linkCard);
 });
-
 
 popupAddContentButton.addEventListener('click', () => {
     openPopup(popupAddPhoto);
