@@ -6,7 +6,7 @@ import { FormValidator } from "./validate.js";
 const buttonEdit = document.querySelector(".profile__edit-button");
 const popupEditProfile = document.querySelector(".popup_profile");
 
-const formEditProfile = popupEditProfile.querySelector(".popup_profile-edit");
+const formEditProfile = popupEditProfile.querySelector(".popup__profile-edit");
 
 const nameInput = formEditProfile.querySelector(".popup__input-name");
 const activityInput = formEditProfile.querySelector(".popup__input-activity");
