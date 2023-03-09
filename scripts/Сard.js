@@ -1,59 +1,36 @@
-import { openPopup } from "./index.js";
-
 export default class Card {
-  constructor(name, link) {
+  constructor(name, link, teplateSelector, handleOpenFullSizePhoto) {
     this._name = name;
     this._link = link;
-    this.openPopup = openPopup;
+    this._templateSelector = teplateSelector;
+    this.handleOpenFullSizePhoto = handleOpenFullSizePhoto;
   };
 
-  _handleLikedPhoto(likedButtonElement) {
-    likedButtonElement.classList.add("card__like_clicked");
+  _handleLikedPhoto() {
+    this._likedButtonElement.classList.toggle("card__like_clicked");
   };
 
   _handleDeletePhoto() {
     this._element.remove();
   };
 
-  _handleOpenFullSizePhoto(
-    fullSizePhoto,
-    fullSizePhotoName,
-    fullSizePhotoPopup
-  ) {
-    fullSizePhoto.src = this._link;
-    fullSizePhoto.alt = this._name;
-    fullSizePhotoName.textContent = this._name;
-    this.openPopup(fullSizePhotoPopup);
-  };
-
-  _setEventListeners(
-    likedButtonElement,
-    deleteButtonElement,
-    fullSizePhoto,
-    fullSizePhotoName,
-    fullSizePhotoPopup,
-    photoElement
-  ) {
-    likedButtonElement.addEventListener("click", () => {
-      this._handleLikedPhoto(likedButtonElement);
+  _setEventListeners() {
+    this._likedButtonElement.addEventListener("click", () => {
+      this._handleLikedPhoto();
     });
 
-    photoElement.addEventListener("click", () => {
-      this._handleOpenFullSizePhoto(
-        fullSizePhoto,
-        fullSizePhotoName,
-        fullSizePhotoPopup
-      );
+    this._photoElement.addEventListener("click", () => {
+      this.handleOpenFullSizePhoto(this._name, this._link);
     });
 
-    deleteButtonElement.addEventListener("click", () => {
+    this._deleteButtonElement.addEventListener("click", () => {
       this._handleDeletePhoto();
     });
-  };
+  }
 
   _getTemplate() {
     const cardElement = document
-      .querySelector("#card-template")
+      .querySelector(this._templateSelector)
       .content.querySelector(".card")
       .cloneNode(true);
 
@@ -62,26 +39,15 @@ export default class Card {
 
   generateCard() {
     this._element = this._getTemplate();
-    this._element.querySelector(".card__photo").src = this._link;
-    this._element.querySelector(".card__photo").alt = this._name;
+    this._photoElement = this._element.querySelector(".card__photo");
+    this._photoElement.src = this._link;
+    this._photoElement.alt = this._name;
     this._element.querySelector(".card__name").textContent = this._name;
 
-    const photoElement = this._element.querySelector(".card__photo");
-    const likedButtonElement = this._element.querySelector(".card__like");
-    const deleteButtonElement = this._element.querySelector(".card__del-btn");
-    const fullSizePhotoPopup = document.querySelector(".popup_bigphoto");
-    const fullSizePhoto = fullSizePhotoPopup.querySelector(".popup__photo");
-    const fullSizePhotoName =
-      fullSizePhotoPopup.querySelector(".popup__photo-name");
+    this._likedButtonElement = this._element.querySelector(".card__like");
+    this._deleteButtonElement = this._element.querySelector(".card__del-btn");
 
-    this._setEventListeners(
-      likedButtonElement,
-      deleteButtonElement,
-      fullSizePhoto,
-      fullSizePhotoName,
-      fullSizePhotoPopup,
-      photoElement
-    );
+    this._setEventListeners();
 
     return this._element;
   }
