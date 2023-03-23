@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./pages/index.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesto</title>
@@ -11,11 +10,11 @@
 
 <body class="main">
     <header class="header">
-        <img class="header__logo" src="./images/logo/logo-white.svg" alt="Место. Россия. Логотип.">
+        <img class="header__logo" src="<%=require('./images/logo/logo-white.svg')%>" alt="Место. Россия. Логотип.">
     </header>
     <main>
         <section class="profile lead">
-            <img src="./images/image.jpg" class="profile__foto" alt="аватар профиля">
+            <img src="<%=require('./images/image.jpg')%>" class="profile__foto" alt="аватар профиля">
             <div class="profile__name-edit">
                 <h1 class="profile__name">Жак-Ив Кусто</h1><button aria-label="кнопка редактирования профиля."
                     class="profile__edit-button" type="button"></button>
@@ -95,10 +94,6 @@
         </li>
 
     </template>
-    <script type="module" src="./scripts/index.js"></script>
-    <script type="module" src="./scripts/FormValidator.js"></script>
-    <script type="module" src="./scripts/cards.js"></script>
-    <script type="module" src="./scripts/Сard.js"></script>
 
 </body>
 

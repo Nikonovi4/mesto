@@ -1,18 +1,18 @@
 export default class Card {
-  constructor(name, link, teplateSelector, handleOpenFullSizePhoto) {
+  constructor(name, link, teplateSelector, { handleCardClick }) {
     this._name = name;
     this._link = link;
     this._templateSelector = teplateSelector;
-    this.handleOpenFullSizePhoto = handleOpenFullSizePhoto;
-  };
+    this.handleCardClick = handleCardClick;
+  }
 
   _handleLikedPhoto() {
     this._likedButtonElement.classList.toggle("card__like_clicked");
-  };
+  }
 
   _handleDeletePhoto() {
     this._element.remove();
-  };
+  }
 
   _setEventListeners() {
     this._likedButtonElement.addEventListener("click", () => {
@@ -20,7 +20,7 @@ export default class Card {
     });
 
     this._photoElement.addEventListener("click", () => {
-      this.handleOpenFullSizePhoto(this._name, this._link);
+      this.handleCardClick(this._link, this._name);
     });
 
     this._deleteButtonElement.addEventListener("click", () => {
@@ -35,7 +35,7 @@ export default class Card {
       .cloneNode(true);
 
     return cardElement;
-  };
+  }
 
   generateCard() {
     this._element = this._getTemplate();
@@ -51,4 +51,4 @@ export default class Card {
 
     return this._element;
   }
-};
+}
