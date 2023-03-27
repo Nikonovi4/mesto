@@ -1,19 +1,14 @@
 import "core-js/actual";
 import "./pages/index.css";
 
-
 import Card from "./components/Сard.js";
-import Popup from "./components/Popup.js";
 import Section from "./components/Section.js";
 import PopupWithImage from "./components/PopupWithImage.js";
 import PopupWithForm from "./components/PopupWihtForm.js";
 import UserInfo from "./components/UserInfo.js";
 
 import { initialCards } from "./utils/cards.js";
-import {
-  validationConfig,
-  FormValidator,
-} from "./components/FormValidator.js";
+import { validationConfig, FormValidator } from "./components/FormValidator.js";
 
 import {
   popupEditProfile,
@@ -32,74 +27,70 @@ const newCardValidatior = new FormValidator(formNewPhoto, validationConfig);
 profileValidatior.enableValidation();
 newCardValidatior.enableValidation();
 
-const FormWithPhoto = new PopupWithImage(".popup_bigphoto");
+function createCard(name, link) {
+  const photo = new Card(name, link, "#card-template", {
+    handleCardClick: () => {
+      bigSizePhoto.open(link, name);
+    },
+  });
+  const cardElement = photo.generateCard();
+  return cardElement;
+}
 
-const FormNewPhoto = new Popup(".popup_add-photo");
-const FormEditProfile = new Popup(".popup_profile");
-
-const Photos = new Section(
+const photos = new Section(
   {
     items: initialCards,
     renderer: (item) => {
-      const Photo = new Card(item.name, item.link, "#card-template", {
-        handleCardClick: () => {
-          BigSizePhoto.open(item.link, item.name);
-        },
-      });
-      const PhotoElement = Photo.generateCard();
-      Photos.addItems(PhotoElement);
+      const photoElement = createCard(item.name, item.link);
+      photos.addItems(photoElement);
     },
   },
   ".foto"
 );
 
-Photos.rendererItems();
+photos.rendererItems();
 
-const BigSizePhoto = new PopupWithImage(".popup_bigphoto");
-BigSizePhoto.setEventListeners();
+const bigSizePhoto = new PopupWithImage(".popup_bigphoto");
+bigSizePhoto.setEventListeners();
 
-const ProfileEditForm = new PopupWithForm(".popup_profile", {
+const profileEditForm = new PopupWithForm(".popup_profile", {
   callBackSubmit: (info) => {
-    profileName.textContent = info.firstInputValue;
-    pofileActivity.textContent = info.secondInputValue;
-    FormEditProfile.close();
-  },
-});
-
-const AddNewPhotoForm = new PopupWithForm(".popup_add-photo", {
-  callBackSubmit: (info) => {
-    const newCardElement = new Card(
-      info.firstInputValue,
-      info.secondInputValue,
-      "#card-template",
-      {
-        handleCardClick: () => {
-          BigSizePhoto.open(info.secondInputValue, info.firstInputValue);
-        },
-      }
+    userInformation.setUserInfo(
+      info["popup__input-name"],
+      info["popup__input-activity"]
     );
-    const PhotoElement = newCardElement.generateCard();
-
-    photoContainer.prepend(PhotoElement);
+    profileEditForm.close();
   },
 });
 
-const UserInformation = new UserInfo({
-  nameSelector: ".popup__input-name",
-  infoSelector: ".popup__input-activity",
+const addNewPhotoForm = new PopupWithForm(".popup_add-photo", {
+  callBackSubmit: (info) => {
+    const newPhoto = createCard(
+      info["popup__input-card-name"],
+      info["popup__input-card-link"]
+    );
+    photos.addItems(newPhoto);
+  },
+});
+
+const userInformation = new UserInfo({
+  nameSelector: ".profile__name",
+  infoSelector: ".profile__activity",
 });
 
 buttonEdit.addEventListener("click", () => {
-  const userInfo = UserInformation.getUserInfo();
+  const userInfo = userInformation.getUserInfo();
   nameInput.value = userInfo.name;
   activityInput.value = userInfo.info;
-  ProfileEditForm.open();
+  profileEditForm.open();
 });
 
-ProfileEditForm.setEventListeners();
+profileEditForm.setEventListeners();
 
 popupAddContentButton.addEventListener("click", () => {
-  AddNewPhotoForm.open();
+  addNewPhotoForm.open();
+  newCardValidatior.disableButton();
+  newCardValidatior.resetErrorElements();
 });
 
-AddNewPhotoForm.setEventListeners();
+addNewPhotoForm.setEventListeners();

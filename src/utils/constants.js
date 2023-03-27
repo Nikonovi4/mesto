@@ -20,8 +20,3 @@ export const popupAddContentButton = document.querySelector(
 );
 
 export const formNewPhoto = document.querySelector(".popup__newphoto");
-
-export const fullSizePhotoPopup = document.querySelector(".popup_bigphoto");
-export const fullSizePhoto = fullSizePhotoPopup.querySelector(".popup__photo");
-export const fullSizePhotoName =
-  fullSizePhotoPopup.querySelector(".popup__photo-name");
