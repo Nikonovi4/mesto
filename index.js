@@ -24675,7 +24675,7 @@ addNewPhotoForm.setEventListeners();
 //_________________________________________________________
 
 const api = new Api({
-  link: 'https://mesto.nomoreparties.co/v1/cohort-63/cards',
+  link: 'https://mesto.nomoreparties.co/v1/cohort-63/',
   headers: {
     'content-type': 'application/json',
     authorization: '23f5b49e-3722-4d4b-b616-4f4f71d989aa'
