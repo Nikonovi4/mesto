@@ -24702,7 +24702,7 @@ addNewPhotoForm.setEventListeners();
 //_________________________________________________________
 
 
-const api = new _components_api_js__WEBPACK_IMPORTED_MODULE_10__.Api({
+const api = new _components_api_js__WEBPACK_IMPORTED_MODULE_10__["default"]({
   link: 'https://mesto.nomoreparties.co/v1/cohort-63/',
   headers: {
     'content-type': 'application/json',
