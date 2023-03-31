@@ -24674,17 +24674,12 @@ const profileEditForm = new _components_PopupWihtForm_js__WEBPACK_IMPORTED_MODUL
     profileEditForm.close();
   }
 });
-
-/*const addNewPhotoForm = new PopupWithForm(".popup_add-photo", {
-  callBackSubmit: (info) => {
-    const newPhoto = createCard(
-      info["popup__input-card-name"],
-      info["popup__input-card-link"]
-    );
+const addNewPhotoForm = new _components_PopupWihtForm_js__WEBPACK_IMPORTED_MODULE_5__["default"](".popup_add-photo", {
+  callBackSubmit: info => {
+    const newPhoto = createCard(info["popup__input-card-name"], info["popup__input-card-link"]);
     photos.addItems(newPhoto);
-  },
-});*/
-
+  }
+});
 const userInformation = new _components_UserInfo_js__WEBPACK_IMPORTED_MODULE_6__["default"]({
   nameSelector: ".profile__name",
   infoSelector: ".profile__activity"
@@ -24720,8 +24715,8 @@ photoList.then(list => {
       photos.addItems(photoElement);
     }
   }, ".foto");
-}).then(photoElement => {
-  photoElement.rendererItems();
+}).then(photos => {
+  photos.rendererItems();
 });
 })();
 
