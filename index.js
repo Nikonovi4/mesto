@@ -24121,9 +24121,11 @@ class Api {
     this._headers = config._headers;
   }
   getAllCards() {
-    return fetch(this._url, {
+    fetch(this._url, {
       method: "GET",
       headers: this._headers
+    }).then(res => res.json()).then(result => {
+      console.log(result);
     });
   }
 }
