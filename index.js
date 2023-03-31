@@ -24104,6 +24104,32 @@ module.exports = path;
 
 /***/ }),
 
+/***/ "./src/components/Api.js":
+/*!*******************************!*\
+  !*** ./src/components/Api.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Api)
+/* harmony export */ });
+class Api {
+  constructor(config) {
+    this._url = config.url;
+    this._headers = config._headers;
+  }
+  getAllCards() {
+    return fetch(this._url, {
+      method: "GET",
+      headers: this._headers
+    });
+  }
+}
+
+/***/ }),
+
 /***/ "./src/components/FormValidator.js":
 /*!*****************************************!*\
   !*** ./src/components/FormValidator.js ***!
@@ -24374,32 +24400,6 @@ class UserInfo {
 
 /***/ }),
 
-/***/ "./src/components/api.js":
-/*!*******************************!*\
-  !*** ./src/components/api.js ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Api)
-/* harmony export */ });
-class Api {
-  constructor(config) {
-    this._url = config.url;
-    this._headers = config._headers;
-  }
-  getAllCards() {
-    return fetch(this._url, {
-      method: "GET",
-      headers: this._headers
-    });
-  }
-}
-
-/***/ }),
-
 /***/ "./src/components/Сard.js":
 /*!********************************!*\
   !*** ./src/components/Сard.js ***!
@@ -24636,7 +24636,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_cards_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./utils/cards.js */ "./src/utils/cards.js");
 /* harmony import */ var _components_FormValidator_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/FormValidator.js */ "./src/components/FormValidator.js");
 /* harmony import */ var _utils_constants_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./utils/constants.js */ "./src/utils/constants.js");
-/* harmony import */ var _components_api_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/api.js */ "./src/components/api.js");
+/* harmony import */ var _components_Api_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/Api.js */ "./src/components/Api.js");
 
 
 
@@ -24702,8 +24702,8 @@ addNewPhotoForm.setEventListeners();
 //_________________________________________________________
 
 
-const api = new _components_api_js__WEBPACK_IMPORTED_MODULE_10__["default"]({
-  link: 'https://mesto.nomoreparties.co/v1/cohort-63/',
+const api = new _components_Api_js__WEBPACK_IMPORTED_MODULE_10__["default"]({
+  url: 'https://mesto.nomoreparties.co/v1/cohort-63/',
   headers: {
     'content-type': 'application/json',
     authorization: '23f5b49e-3722-4d4b-b616-4f4f71d989aa'
