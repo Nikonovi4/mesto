@@ -24664,7 +24664,18 @@ function createCard(name, link) {
   return cardElement;
 }
 
-//photos.rendererItems();
+/*const photos = new Section(
+  {
+    items: initialCards,
+    renderer: (item) => {
+      const photoElement = createCard(item.name, item.link);
+      photos.addItems(photoElement);
+    },
+  },
+  ".foto"
+);
+
+photos.rendererItems();*/
 
 const bigSizePhoto = new _components_PopupWithImage_js__WEBPACK_IMPORTED_MODULE_4__["default"](".popup_bigphoto");
 bigSizePhoto.setEventListeners();
@@ -24706,17 +24717,18 @@ const api = new _components_Api_js__WEBPACK_IMPORTED_MODULE_10__["default"]({
     authorization: '23f5b49e-3722-4d4b-b616-4f4f71d989aa'
   }
 });
-const photoList = api.getAllCards();
-photoList.then(list => {
+const cardsList = api.getAllCards();
+cardsList.then(list => {
   const photos = new _components_Section_js__WEBPACK_IMPORTED_MODULE_3__["default"]({
-    items: list,
+    items: _utils_cards_js__WEBPACK_IMPORTED_MODULE_7__.initialCards,
     renderer: item => {
       const photoElement = createCard(item.name, item.link);
       photos.addItems(photoElement);
     }
   }, ".foto");
-}).then(photos => {
-  photos.rendererItems();
+});
+photos.then(list => {
+  list.rendererItems();
 });
 })();
 
