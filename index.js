@@ -24383,7 +24383,7 @@ class UserInfo {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Api": () => (/* binding */ Api)
+/* harmony export */   "default": () => (/* binding */ Api)
 /* harmony export */ });
 class Api {
   constructor(config) {
