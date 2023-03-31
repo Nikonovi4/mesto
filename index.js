@@ -24663,7 +24663,9 @@ function createCard(name, link) {
   const cardElement = photo.generateCard();
   return cardElement;
 }
-photos.rendererItems();
+
+//photos.rendererItems();
+
 const bigSizePhoto = new _components_PopupWithImage_js__WEBPACK_IMPORTED_MODULE_4__["default"](".popup_bigphoto");
 bigSizePhoto.setEventListeners();
 const profileEditForm = new _components_PopupWihtForm_js__WEBPACK_IMPORTED_MODULE_5__["default"](".popup_profile", {
@@ -24713,6 +24715,8 @@ photoList.then(list => {
       photos.addItems(photoElement);
     }
   }, ".foto");
+}).then(photoElement => {
+  photoElement.rendererItems();
 });
 })();
 
