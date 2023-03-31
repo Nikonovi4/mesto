@@ -24117,11 +24117,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 class Api {
   constructor(config) {
-    this._url = config.url;
+    this.url = config.url;
     this.headers = config.headers;
   }
   getAllCards() {
-    fetch(this._url, {
+    fetch(this.url, {
       method: "GET",
       headers: this.headers
     }).then(res => res.json()).then(result => {
