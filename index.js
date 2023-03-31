@@ -24726,9 +24726,10 @@ cardsList.then(list => {
       photos.addItems(photoElement);
     }
   }, ".foto");
+  return photos;
 });
 photos.then(list => {
-  list.rendererItems();
+  return list.rendererItems();
 });
 })();
 
