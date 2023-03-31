@@ -24672,6 +24672,16 @@ _utils_constants_js__WEBPACK_IMPORTED_MODULE_9__.popupAddContentButton.addEventL
   newCardValidatior.resetErrorElements();
 });
 addNewPhotoForm.setEventListeners();
+//_________________________________________________________
+
+const api = new Api({
+  link: 'https://mesto.nomoreparties.co/v1/cohort-63/cards',
+  headers: {
+    'content-type': 'application/json',
+    authorization: '23f5b49e-3722-4d4b-b616-4f4f71d989aa'
+  }
+});
+api.getAllCards();
 })();
 
 /******/ })()
