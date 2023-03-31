@@ -24118,12 +24118,12 @@ __webpack_require__.r(__webpack_exports__);
 class Api {
   constructor(config) {
     this._url = config.url;
-    this._headers = config._headers;
+    this.headers = config.headers;
   }
   getAllCards() {
     fetch(this._url, {
       method: "GET",
-      headers: this._headers
+      headers: this.headers
     }).then(res => res.json()).then(result => {
       console.log(result);
     });
