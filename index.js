@@ -24675,39 +24675,52 @@ function createCard(name, link) {
   ".foto"
 );
 
-photos.rendererItems();*/
+photos.rendererItems();
 
-const bigSizePhoto = new _components_PopupWithImage_js__WEBPACK_IMPORTED_MODULE_4__["default"](".popup_bigphoto");
+const bigSizePhoto = new PopupWithImage(".popup_bigphoto");
 bigSizePhoto.setEventListeners();
-const profileEditForm = new _components_PopupWihtForm_js__WEBPACK_IMPORTED_MODULE_5__["default"](".popup_profile", {
-  callBackSubmit: info => {
-    userInformation.setUserInfo(info["popup__input-name"], info["popup__input-activity"]);
+
+const profileEditForm = new PopupWithForm(".popup_profile", {
+  callBackSubmit: (info) => {
+    userInformation.setUserInfo(
+      info["popup__input-name"],
+      info["popup__input-activity"]
+    );
     profileEditForm.close();
-  }
+  },
 });
-const addNewPhotoForm = new _components_PopupWihtForm_js__WEBPACK_IMPORTED_MODULE_5__["default"](".popup_add-photo", {
-  callBackSubmit: info => {
-    const newPhoto = createCard(info["popup__input-card-name"], info["popup__input-card-link"]);
+
+const addNewPhotoForm = new PopupWithForm(".popup_add-photo", {
+  callBackSubmit: (info) => {
+    const newPhoto = createCard(
+      info["popup__input-card-name"],
+      info["popup__input-card-link"]
+    );
     photos.addItems(newPhoto);
-  }
+  },
 });
-const userInformation = new _components_UserInfo_js__WEBPACK_IMPORTED_MODULE_6__["default"]({
+
+const userInformation = new UserInfo({
   nameSelector: ".profile__name",
-  infoSelector: ".profile__activity"
+  infoSelector: ".profile__activity",
 });
-_utils_constants_js__WEBPACK_IMPORTED_MODULE_9__.buttonEdit.addEventListener("click", () => {
+
+buttonEdit.addEventListener("click", () => {
   const userInfo = userInformation.getUserInfo();
-  _utils_constants_js__WEBPACK_IMPORTED_MODULE_9__.nameInput.value = userInfo.name;
-  _utils_constants_js__WEBPACK_IMPORTED_MODULE_9__.activityInput.value = userInfo.info;
+  nameInput.value = userInfo.name;
+  activityInput.value = userInfo.info;
   profileEditForm.open();
 });
+
 profileEditForm.setEventListeners();
-_utils_constants_js__WEBPACK_IMPORTED_MODULE_9__.popupAddContentButton.addEventListener("click", () => {
+
+popupAddContentButton.addEventListener("click", () => {
   addNewPhotoForm.open();
   newCardValidatior.disableButton();
   newCardValidatior.resetErrorElements();
 });
-addNewPhotoForm.setEventListeners();
+
+addNewPhotoForm.setEventListeners();*/
 //_________________________________________________________
 
 
@@ -24717,20 +24730,25 @@ const api = new _components_Api_js__WEBPACK_IMPORTED_MODULE_10__["default"]({
     authorization: '23f5b49e-3722-4d4b-b616-4f4f71d989aa'
   }
 });
-const cardsList = api.getAllCards();
-cardsList.then(list => {
-  const photos = new _components_Section_js__WEBPACK_IMPORTED_MODULE_3__["default"]({
-    items: _utils_cards_js__WEBPACK_IMPORTED_MODULE_7__.initialCards,
-    renderer: item => {
-      const photoElement = createCard(item.name, item.link);
-      photos.addItems(photoElement);
-    }
-  }, ".foto");
-  return photos;
+api.getAllCards();
+
+/*const cardsList = api.getAllCards()
+cardsList.then((list) => {
+   const photos = new Section(
+    {
+      items: initialCards,
+      renderer: (item) => {
+        const photoElement = createCard(item.name, item.link);
+        photos.addItems(photoElement);
+      },
+    },
+    ".foto"
+  );
+  return photos
 });
-photos.then(list => {
-  return list.rendererItems();
-});
+photos.then((list)=>{
+ return list.rendererItems()
+})*/
 })();
 
 /******/ })()
