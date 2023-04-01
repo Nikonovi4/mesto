@@ -24127,8 +24127,6 @@ class Api {
       "content_type": "application/json"
     }).then(res => {
       return res.json();
-    }).then(list => {
-      console.log(list);
     });
   }
 }
@@ -24731,8 +24729,10 @@ const api = new _components_Api_js__WEBPACK_IMPORTED_MODULE_10__["default"]({
   headers: {
     authorization: '23f5b49e-3722-4d4b-b616-4f4f71d989aa'
   }
+}).then(json => {
+  console.log(json);
 });
-api.getAllCards();
+//api.getAllCards()
 
 /*const photoListJson = api.getAllCards()
 photoListJson
