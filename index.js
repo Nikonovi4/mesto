@@ -24123,7 +24123,7 @@ class Api {
   getAllCards() {
     fetch(this.url, {
       method: "GET",
-      headers: this.headers,
+      headers: this._headers,
       "content_type": "application/json"
     }).then(res => res.json()).then(result => {
       console.log(result);
