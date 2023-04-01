@@ -24730,16 +24730,22 @@ const api = new _components_Api_js__WEBPACK_IMPORTED_MODULE_10__["default"]({
     authorization: '23f5b49e-3722-4d4b-b616-4f4f71d989aa'
   }
 });
-const photoListJson = api.getAllCards();
-photoListJson.then(list => {
-  const photos = new _components_Section_js__WEBPACK_IMPORTED_MODULE_3__["default"]({
-    items: list,
-    renderer: item => {
-      const photoElement = createCard(item.name, item.link);
-      photos.addItems(photoElement);
-    }
-  }, ".foto");
-});
+api.getAllCards();
+
+/*const photoListJson = api.getAllCards()
+photoListJson
+  .then((list) => {
+  const photos = new Section(
+    {
+      items: list,
+      renderer: (item) => {
+        const photoElement = createCard(item.name, item.link);
+        photos.addItems(photoElement);
+      },
+    },
+    ".foto"
+  );
+})*/
 
 /*const cardsList = api.getAllCards()
 cardsList.then((list) => {
