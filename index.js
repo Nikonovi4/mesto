@@ -24125,9 +24125,10 @@ class Api {
       method: "GET",
       headers: this.headers,
       "content_type": "application/json"
-    }).then(res => res.json()).then(result => {
-      console.log(result);
-    });
+    }).then(res => res.json());
+    //.then((result) => {
+    //  console.log(result);
+    //})
   }
 }
 
@@ -24730,7 +24731,10 @@ const api = new _components_Api_js__WEBPACK_IMPORTED_MODULE_10__["default"]({
     authorization: '23f5b49e-3722-4d4b-b616-4f4f71d989aa'
   }
 });
-api.getAllCards();
+const photoListJson = api.getAllCards();
+photoListJson.then(list => {
+  console.log(list);
+});
 
 /*const cardsList = api.getAllCards()
 cardsList.then((list) => {
