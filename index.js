@@ -24124,7 +24124,7 @@ class Api {
     fetch(this.url, {
       method: "GET",
       headers: this.headers,
-      "content_type": "application/json"
+      "content-type": "application/json"
     });
   }
 }
