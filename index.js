@@ -24125,8 +24125,6 @@ class Api {
       method: "GET",
       headers: this.headers,
       "content_type": "application/json"
-    }).then(res => {
-      return res.json();
     });
   }
 }
