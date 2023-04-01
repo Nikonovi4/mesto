@@ -24125,6 +24125,10 @@ class Api {
       method: "GET",
       headers: this.headers,
       "content-type": "application/json"
+    }).then(res => {
+      return res.json();
+    }).then(list => {
+      console.log(list);
     });
   }
 }
@@ -24734,10 +24738,8 @@ const api = new _components_Api_js__WEBPACK_IMPORTED_MODULE_10__["default"]({
 //   console.log(json)
 // })
 
-const photoListJson = api.getAllCards();
-photoListJson.then(list => {
-  console.log(list);
-});
+api.getAllCards();
+
 //   const photos = new Section(
 //     {
 //       items: list,
