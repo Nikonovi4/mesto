@@ -24125,10 +24125,9 @@ class Api {
       method: "GET",
       headers: this.headers,
       "content_type": "application/json"
-    }).then(res => res.json());
-    //.then((result) => {
-    //  console.log(result);
-    //})
+    }).then(res => {
+      return res.json();
+    });
   }
 }
 
@@ -24740,7 +24739,6 @@ photoListJson.then(list => {
       photos.addItems(photoElement);
     }
   }, ".foto");
-  return photos;
 });
 
 /*const cardsList = api.getAllCards()
