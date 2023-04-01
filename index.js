@@ -24126,7 +24126,9 @@ class Api {
       headers: this.headers,
       "content_type": "application/json"
     }).then(res => {
-      console.log(res.json());
+      res.json();
+    }).then(list => {
+      console.log(list);
     });
   }
 }
