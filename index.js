@@ -24733,23 +24733,20 @@ const api = new _components_Api_js__WEBPACK_IMPORTED_MODULE_10__["default"]({
 
 //api.getAllCards()
 
-/*const cardsList = api.getAllCards()
-cardsList.then((list) => {
-   const photos = new Section(
-    {
-      items: initialCards,
-      renderer: (item) => {
-        const photoElement = createCard(item.name, item.link);
-        photos.addItems(photoElement);
-      },
-    },
-    ".foto"
-  );
-  return photos
+const cardsList = api.getAllCards();
+cardsList.then(list => {
+  const photos = new _components_Section_js__WEBPACK_IMPORTED_MODULE_3__["default"]({
+    items: _utils_cards_js__WEBPACK_IMPORTED_MODULE_7__.initialCards,
+    renderer: item => {
+      const photoElement = createCard(item.name, item.link);
+      photos.addItems(photoElement);
+    }
+  }, ".foto");
+  return photos;
 });
-photos.then((list)=>{
- return list.rendererItems()
-})*/
+photos.then(list => {
+  return list.rendererItems();
+});
 })();
 
 /******/ })()
