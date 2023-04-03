@@ -24128,10 +24128,9 @@ class Api {
       }
     }).then(res => {
       return res.json();
+    }).then(list => {
+      console.log(list);
     });
-    // .then((list) => {
-    //     console.log(list)
-    //   })
   }
 }
 
@@ -24731,18 +24730,23 @@ addNewPhotoForm.setEventListeners();*/
 const api = new _components_Api_js__WEBPACK_IMPORTED_MODULE_10__["default"]({
   url: 'https://mesto.nomoreparties.co/v1/cohort-63/cards'
 });
-api.getAllCards().then(list => {
-  const photos = new _components_Section_js__WEBPACK_IMPORTED_MODULE_3__["default"]({
-    items: list,
-    renderer: item => {
-      const photoElement = createCard(item.name, item.link);
-      photos.addItems(photoElement);
-    }
-  }, ".foto");
-  return photos;
-}).then(photoList => {
-  photoList.rendererItems();
-});
+api.getAllCards();
+//   .then((list) => {
+//   const photos = new Section(
+//     {
+//       items: list,
+//       renderer: (item) => {
+//         const photoElement = createCard(item.name, item.link);
+//         photos.addItems(photoElement);
+//       },
+//     },
+//     ".foto"
+//   );
+//   return photos
+// })
+// .then((photoList) => {
+//   photoList.rendererItems()
+// })
 
 // const cardsList = api.getAllCards()
 // cardsList.then((list) => {
