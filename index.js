@@ -24359,8 +24359,8 @@ class Section {
   addItems(element) {
     this._container.prepend(element);
   }
-  rendererItems() {
-    this._renderItems.forEach(item => {
+  rendererItems(data) {
+    data.forEach(item => {
       this._renderer(item);
     });
   }
