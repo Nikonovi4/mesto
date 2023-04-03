@@ -24734,13 +24734,11 @@ const api = new _components_Api_js__WEBPACK_IMPORTED_MODULE_10__["default"]({
 //   console.log(json)
 // })
 
-// api.getAllCards()
-//   .then((res) => {
-//     return res.json()
-//   })
-//   .then((list) => {
-//     console.log(list)
-//   })
+api.getAllCards().then(res => {
+  return res.json();
+}).then(list => {
+  console.log(list);
+});
 
 //   const photos = new Section(
 //     {
