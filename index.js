@@ -24118,13 +24118,14 @@ __webpack_require__.r(__webpack_exports__);
 class Api {
   constructor(config) {
     this.url = config.url;
-    this.headers = config.headers;
   }
   getAllCards() {
     fetch(this.url, {
       method: "GET",
-      headers: this.headers,
-      "content-type": "application/json"
+      headers: {
+        authorization: '23f5b49e-3722-4d4b-b616-4f4f71d989aa',
+        "content-type": "application/json"
+      }
     }).then(res => {
       return res.json();
     });
