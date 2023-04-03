@@ -24127,9 +24127,10 @@ class Api {
       "content-type": "application/json"
     }).then(res => {
       return res.json();
-    }).then(list => {
-      console.log(list);
     });
+    // .then((list) => {
+    //     console.log(list)
+    //   })
   }
 }
 
@@ -24732,23 +24733,18 @@ const api = new _components_Api_js__WEBPACK_IMPORTED_MODULE_10__["default"]({
     authorization: '23f5b49e-3722-4d4b-b616-4f4f71d989aa'
   }
 });
-api.getAllCards();
-
-//   const photos = new Section(
-//     {
-//       items: list,
-//       renderer: (item) => {
-//         const photoElement = createCard(item.name, item.link);
-//         photos.addItems(photoElement);
-//       },
-//     },
-//     ".foto"
-//   );
-//   return photos
-// })
-// .then((photoList) => {
-//   photoList.rendererItems()
-// })
+api.getAllCards().then(list => {
+  const photos = new _components_Section_js__WEBPACK_IMPORTED_MODULE_3__["default"]({
+    items: list,
+    renderer: item => {
+      const photoElement = createCard(item.name, item.link);
+      photos.addItems(photoElement);
+    }
+  }, ".foto");
+  return photos;
+}).then(photoList => {
+  photoList.rendererItems();
+});
 
 // const cardsList = api.getAllCards()
 // cardsList.then((list) => {
