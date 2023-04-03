@@ -24460,39 +24460,6 @@ class Card {
 
 /***/ }),
 
-/***/ "./src/utils/cards.js":
-/*!****************************!*\
-  !*** ./src/utils/cards.js ***!
-  \****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "initialCards": () => (/* binding */ initialCards)
-/* harmony export */ });
-const initialCards = [{
-  name: 'Архыз',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-}, {
-  name: 'Челябинская область',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-}, {
-  name: 'Иваново',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-}, {
-  name: 'Камчатка',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-}, {
-  name: 'Холмогорский район',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-}, {
-  name: 'Байкал',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-}];
-
-/***/ }),
-
 /***/ "./src/utils/constants.js":
 /*!********************************!*\
   !*** ./src/utils/constants.js ***!
@@ -24637,10 +24604,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_PopupWithImage_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/PopupWithImage.js */ "./src/components/PopupWithImage.js");
 /* harmony import */ var _components_PopupWihtForm_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/PopupWihtForm.js */ "./src/components/PopupWihtForm.js");
 /* harmony import */ var _components_UserInfo_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/UserInfo.js */ "./src/components/UserInfo.js");
-/* harmony import */ var _utils_cards_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./utils/cards.js */ "./src/utils/cards.js");
-/* harmony import */ var _components_FormValidator_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/FormValidator.js */ "./src/components/FormValidator.js");
-/* harmony import */ var _utils_constants_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./utils/constants.js */ "./src/utils/constants.js");
-/* harmony import */ var _components_Api_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/Api.js */ "./src/components/Api.js");
+/* harmony import */ var _components_FormValidator_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/FormValidator.js */ "./src/components/FormValidator.js");
+/* harmony import */ var _utils_constants_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./utils/constants.js */ "./src/utils/constants.js");
+/* harmony import */ var _components_Api_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/Api.js */ "./src/components/Api.js");
 
 
 
@@ -24649,10 +24615,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+//import { initialCards } from "./utils/cards.js";
 
 
-const profileValidatior = new _components_FormValidator_js__WEBPACK_IMPORTED_MODULE_8__.FormValidator(_utils_constants_js__WEBPACK_IMPORTED_MODULE_9__.popupEditProfile, _components_FormValidator_js__WEBPACK_IMPORTED_MODULE_8__.validationConfig);
-const newCardValidatior = new _components_FormValidator_js__WEBPACK_IMPORTED_MODULE_8__.FormValidator(_utils_constants_js__WEBPACK_IMPORTED_MODULE_9__.formNewPhoto, _components_FormValidator_js__WEBPACK_IMPORTED_MODULE_8__.validationConfig);
+const profileValidatior = new _components_FormValidator_js__WEBPACK_IMPORTED_MODULE_7__.FormValidator(_utils_constants_js__WEBPACK_IMPORTED_MODULE_8__.popupEditProfile, _components_FormValidator_js__WEBPACK_IMPORTED_MODULE_7__.validationConfig);
+const newCardValidatior = new _components_FormValidator_js__WEBPACK_IMPORTED_MODULE_7__.FormValidator(_utils_constants_js__WEBPACK_IMPORTED_MODULE_8__.formNewPhoto, _components_FormValidator_js__WEBPACK_IMPORTED_MODULE_7__.validationConfig);
 profileValidatior.enableValidation();
 newCardValidatior.enableValidation();
 function createCard(name, link) {
@@ -24664,72 +24631,67 @@ function createCard(name, link) {
   const cardElement = photo.generateCard();
   return cardElement;
 }
-
-/*const photos = new Section(
-  {
-    items: initialCards,
-    renderer: (item) => {
-      const photoElement = createCard(item.name, item.link);
-      photos.addItems(photoElement);
-    },
-  },
-  ".foto"
-);
-
+const photos = new _components_Section_js__WEBPACK_IMPORTED_MODULE_3__["default"]({
+  items: initialCards,
+  renderer: item => {
+    const photoElement = createCard(item.name, item.link);
+    photos.addItems(photoElement);
+  }
+}, ".foto");
 photos.rendererItems();
 
-const bigSizePhoto = new PopupWithImage(".popup_bigphoto");
-bigSizePhoto.setEventListeners();
+// const bigSizePhoto = new PopupWithImage(".popup_bigphoto");
+// bigSizePhoto.setEventListeners();
 
-const profileEditForm = new PopupWithForm(".popup_profile", {
-  callBackSubmit: (info) => {
-    userInformation.setUserInfo(
-      info["popup__input-name"],
-      info["popup__input-activity"]
-    );
-    profileEditForm.close();
-  },
-});
+// const profileEditForm = new PopupWithForm(".popup_profile", {
+//   callBackSubmit: (info) => {
+//     userInformation.setUserInfo(
+//       info["popup__input-name"],
+//       info["popup__input-activity"]
+//     );
+//     profileEditForm.close();
+//   },
+// });
 
-const addNewPhotoForm = new PopupWithForm(".popup_add-photo", {
-  callBackSubmit: (info) => {
-    const newPhoto = createCard(
-      info["popup__input-card-name"],
-      info["popup__input-card-link"]
-    );
-    photos.addItems(newPhoto);
-  },
-});
+// const addNewPhotoForm = new PopupWithForm(".popup_add-photo", {
+//   callBackSubmit: (info) => {
+//     const newPhoto = createCard(
+//       info["popup__input-card-name"],
+//       info["popup__input-card-link"]
+//     );
+//     photos.addItems(newPhoto);
+//   },
+// });
 
-const userInformation = new UserInfo({
-  nameSelector: ".profile__name",
-  infoSelector: ".profile__activity",
-});
+// const userInformation = new UserInfo({
+//   nameSelector: ".profile__name",
+//   infoSelector: ".profile__activity",
+// });
 
-buttonEdit.addEventListener("click", () => {
-  const userInfo = userInformation.getUserInfo();
-  nameInput.value = userInfo.name;
-  activityInput.value = userInfo.info;
-  profileEditForm.open();
-});
+// buttonEdit.addEventListener("click", () => {
+//   const userInfo = userInformation.getUserInfo();
+//   nameInput.value = userInfo.name;
+//   activityInput.value = userInfo.info;
+//   profileEditForm.open();
+// });
 
-profileEditForm.setEventListeners();
+// profileEditForm.setEventListeners();
 
-popupAddContentButton.addEventListener("click", () => {
-  addNewPhotoForm.open();
-  newCardValidatior.disableButton();
-  newCardValidatior.resetErrorElements();
-});
+// popupAddContentButton.addEventListener("click", () => {
+//   addNewPhotoForm.open();
+//   newCardValidatior.disableButton();
+//   newCardValidatior.resetErrorElements();
+// });
 
-addNewPhotoForm.setEventListeners();*/
+// addNewPhotoForm.setEventListeners();*/
 //_________________________________________________________
 
 
-const api = new _components_Api_js__WEBPACK_IMPORTED_MODULE_10__["default"]({
+const api = new _components_Api_js__WEBPACK_IMPORTED_MODULE_9__["default"]({
   url: 'https://mesto.nomoreparties.co/v1/cohort-63/cards'
 });
 api.getAllCards().then(list => {
-  return list.rendererItems();
+  return photos.rendererItems(list);
 }).catch(err => console.log(err));
 
 // .then((list) => {
