@@ -24730,18 +24730,6 @@ const api = new _components_Api_js__WEBPACK_IMPORTED_MODULE_10__["default"]({
 });
 api.getAllCards().then(list => {
   console.log(list);
-  // const photos = new Section(
-  //   {
-  //     items: list,
-  //     renderer: (item) => {
-  //       const photoElement = createCard(item.name, item.link);
-  //       photos.addItems(photoElement);
-  //     },
-  //   },
-  //   ".foto"
-  // );
-
-  // return photos.rendererItems();
 });
 
 //   const photos = new Section(
