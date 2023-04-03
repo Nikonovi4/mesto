@@ -24118,6 +24118,7 @@ __webpack_require__.r(__webpack_exports__);
 class Api {
   constructor(config) {
     this.url = config.url;
+    s;
   }
   getAllCards() {
     fetch(this.url, {
@@ -24729,10 +24730,7 @@ addNewPhotoForm.setEventListeners();*/
 
 
 const api = new _components_Api_js__WEBPACK_IMPORTED_MODULE_10__["default"]({
-  url: 'https://mesto.nomoreparties.co/v1/cohort-63/cards',
-  headers: {
-    authorization: '23f5b49e-3722-4d4b-b616-4f4f71d989aa'
-  }
+  url: 'https://mesto.nomoreparties.co/v1/cohort-63/cards'
 });
 api.getAllCards().then(list => {
   const photos = new _components_Section_js__WEBPACK_IMPORTED_MODULE_3__["default"]({
