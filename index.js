@@ -24118,7 +24118,6 @@ __webpack_require__.r(__webpack_exports__);
 class Api {
   constructor(config) {
     this.url = config.url;
-    s;
   }
   getAllCards() {
     fetch(this.url, {
