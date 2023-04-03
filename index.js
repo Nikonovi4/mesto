@@ -24735,7 +24735,7 @@ api.getAllCards().then(res => {
   return res.json();
 }).then(list => {
   console.log(list);
-});
+}).catch(err => console.log(err));
 
 // .then((list) => {
 //   console.log(list)
