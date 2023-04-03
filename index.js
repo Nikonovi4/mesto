@@ -24126,9 +24126,11 @@ class Api {
         authorization: '23f5b49e-3722-4d4b-b616-4f4f71d989aa',
         "content-type": "application/json"
       }
-    }).then(res => {
-      return res.json();
     });
+
+    // .then((res) => {
+    //   return res.json()
+    // })
   }
 }
 
