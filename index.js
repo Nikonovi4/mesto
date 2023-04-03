@@ -24351,10 +24351,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 class Section {
   constructor({
-    items,
     renderer
   }, containerSelector) {
-    this._renderItems = items;
     this._renderer = renderer;
     this._container = document.querySelector(containerSelector);
   }
@@ -24632,7 +24630,6 @@ function createCard(name, link) {
   return cardElement;
 }
 const photos = new _components_Section_js__WEBPACK_IMPORTED_MODULE_3__["default"]({
-  items: initialCards,
   renderer: item => {
     const photoElement = createCard(item.name, item.link);
     photos.addItems(photoElement);
