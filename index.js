@@ -24734,39 +24734,47 @@ const api = new _components_Api_js__WEBPACK_IMPORTED_MODULE_10__["default"]({
 //   console.log(json)
 // })
 
-api.getAllCards().then(res => {
-  return res.json();
-}).then(list => {
-  console.log(list);
-  const photos = new _components_Section_js__WEBPACK_IMPORTED_MODULE_3__["default"]({
-    items: list,
-    renderer: item => {
-      const photoElement = createCard(item.name, item.link);
-      photos.addItems(photoElement);
-    }
-  }, ".foto");
-  return photos;
-}).then(photoList => {
-  photoList.rendererItems();
-});
+// api.getAllCards()
+//   .then((res) => {
+//     return res.json()
+//   })
+//   .then((list) => {
+//     console.log(list)
+//   })
 
-/*const cardsList = api.getAllCards()
-cardsList.then((list) => {
-   const photos = new Section(
-    {
-      items: initialCards,
-      renderer: (item) => {
-        const photoElement = createCard(item.name, item.link);
-        photos.addItems(photoElement);
-      },
-    },
-    ".foto"
-  );
-  return photos
-});
-photos.then((list)=>{
- return list.rendererItems()
-})*/
+//   const photos = new Section(
+//     {
+//       items: list,
+//       renderer: (item) => {
+//         const photoElement = createCard(item.name, item.link);
+//         photos.addItems(photoElement);
+//       },
+//     },
+//     ".foto"
+//   );
+//   return photos
+// })
+// .then((photoList) => {
+//   photoList.rendererItems()
+// })
+
+// const cardsList = api.getAllCards()
+// cardsList.then((list) => {
+//    const photos = new Section(
+//     {
+//       items: initialCards,
+//       renderer: (item) => {
+//         const photoElement = createCard(item.name, item.link);
+//         photos.addItems(photoElement);
+//       },
+//     },
+//     ".foto"
+//   );
+//   return photos
+// });
+// photos.then((list)=>{
+//  return list.rendererItems()
+// })
 })();
 
 /******/ })()
