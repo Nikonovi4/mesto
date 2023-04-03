@@ -24731,7 +24731,7 @@ const api = new _components_Api_js__WEBPACK_IMPORTED_MODULE_10__["default"]({
 api.getAllCards().then(list => {
   console.log(list);
 }).then(list => {
-  list.rendererItems();
+  rendererItems(list);
 }).catch(err => console.log(err));
 
 // .then((list) => {
