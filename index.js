@@ -24730,17 +24730,28 @@ const api = new _components_Api_js__WEBPACK_IMPORTED_MODULE_10__["default"]({
 });
 api.getAllCards().then(list => {
   console.log(list);
-  const photos = new _components_Section_js__WEBPACK_IMPORTED_MODULE_3__["default"]({
-    items: list,
-    renderer: item => {
-      const photoElement = createCard(item.name, item.link);
-      photos.addItems(photoElement);
-    }
-  }, ".foto");
-  return photos;
-}).then(photoList => {
-  photoList.rendererItems();
+  list.forEach(item => {
+    createCard(item.name, item.link);
+  });
+}).then(cardElement => {
+  cardElement.rendererItems();
 });
+
+//   const photos = new Section(
+//     {
+//       items: list,
+//       renderer: (item) => {
+//         const photoElement = createCard(item.name, item.link);
+//         photos.addItems(photoElement);
+//       },
+//     },
+//     ".foto"
+//   );
+//   return photos
+// })
+// .then((photoList) => {
+//   photoList.rendererItems()
+// })
 
 // const cardsList = api.getAllCards()
 // cardsList.then((list) => {
