@@ -24635,7 +24635,8 @@ const photos = new _components_Section_js__WEBPACK_IMPORTED_MODULE_3__["default"
     photos.addItems(photoElement);
   }
 }, ".foto");
-photos.rendererItems();
+
+//photos.rendererItems();
 
 // const bigSizePhoto = new PopupWithImage(".popup_bigphoto");
 // bigSizePhoto.setEventListeners();
