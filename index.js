@@ -24689,7 +24689,7 @@ const api = new _components_Api_js__WEBPACK_IMPORTED_MODULE_9__["default"]({
   url: 'https://mesto.nomoreparties.co/v1/cohort-63/cards'
 });
 api.getAllCards().then(list => {
-  return photos.rendererItems(list);
+  photos.rendererItems(list);
 }).catch(err => console.log(err));
 
 // .then((list) => {
