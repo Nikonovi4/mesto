@@ -24130,6 +24130,21 @@ class Api {
       return res.json();
     });
   }
+  addNewCard(name, link) {
+    return fetch(this.url, {
+      method: "POST",
+      headers: {
+        authorization: '23f5b49e-3722-4d4b-b616-4f4f71d989aa',
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({
+        name,
+        link
+      })
+    }).then(res => {
+      return res.ok ? res.json() : Promise.reject(`Ошибка ${res.status}`);
+    });
+  }
 }
 
 /***/ }),
@@ -24691,44 +24706,7 @@ const api = new _components_Api_js__WEBPACK_IMPORTED_MODULE_9__["default"]({
 api.getAllCards().then(list => {
   photos.rendererItems(list);
 }).catch(err => console.log(err));
-
-// .then((list) => {
-//   console.log(list)
-//   })
-
-//   const photos = new Section(
-//     {
-//       items: list,
-//       renderer: (item) => {
-//         const photoElement = createCard(item.name, item.link);
-//         photos.addItems(photoElement);
-//       },
-//     },
-//     ".foto"
-//   );
-//   return photos
-// })
-// .then((photoList) => {
-//   photoList.rendererItems()
-// })
-
-// const cardsList = api.getAllCards()
-// cardsList.then((list) => {
-//    const photos = new Section(
-//     {
-//       items: initialCards,
-//       renderer: (item) => {
-//         const photoElement = createCard(item.name, item.link);
-//         photos.addItems(photoElement);
-//       },
-//     },
-//     ".foto"
-//   );
-//   return photos
-// });
-// photos.then((list)=>{
-//  return list.rendererItems()
-// })
+api.addNewCard('Озеро', 'https://mobimg.b-cdn.net/v3/fetch/36/36b936cd1fb8b0523e029ab76bae3373.jpeg');
 })();
 
 /******/ })()
