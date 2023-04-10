@@ -1,13 +1,24 @@
 export default class Card {
-  constructor(name, link, teplateSelector, { handleCardClick }) {
+  constructor(
+    name,
+    link,
+    teplateSelector,
+    { handleCardClick, handleLikePhoto, handleRemoveButtonClick},
+    likes,
+    cardId,
+    myUserId,
+    ownerId
+  ) {
     this._name = name;
     this._link = link;
     this._templateSelector = teplateSelector;
     this.handleCardClick = handleCardClick;
-  }
-
-  _handleLikedPhoto() {
-    this._likedButtonElement.classList.toggle("card__like_clicked");
+    this.likes = likes;
+    this._handleLikePhoto = handleLikePhoto;
+    this.cardId = cardId;
+    this.myUserId = myUserId;
+    this.ownerId = ownerId
+    this.handleRemoveButtonClick = handleRemoveButtonClick
   }
 
   _handleDeletePhoto() {
@@ -16,7 +27,7 @@ export default class Card {
 
   _setEventListeners() {
     this._likedButtonElement.addEventListener("click", () => {
-      this._handleLikedPhoto();
+        this._handleLikePhoto(this)
     });
 
     this._photoElement.addEventListener("click", () => {
@@ -24,8 +35,8 @@ export default class Card {
     });
 
     this._deleteButtonElement.addEventListener("click", () => {
-      this._handleDeletePhoto();
-    });
+       this.handleRemoveButtonClick(this)
+      });
   }
 
   _getTemplate() {
@@ -37,6 +48,30 @@ export default class Card {
     return cardElement;
   }
 
+  setLikesCounter(likes) {
+    this.likesCounter.textContent = likes.length;
+    this.likes = likes;
+    this._updateLikeView();
+  }
+
+  hasCurrentUserLike() {
+    return !!this.likes.find((like) => like._id === this.myUserId)
+  }
+
+  _updateLikeView() {
+   if  (this.hasCurrentUserLike()) {
+    this._likedButtonElement.classList.add("card__like_clicked");
+   } else {
+    this._likedButtonElement.classList.remove("card__like_clicked");
+   }
+  }
+
+  showDeleteButton() {
+    if (this.ownerId === this.myUserId) {
+      this._deleteButtonElement.classList.remove('card__del-btn_invisibl')
+    }
+  }
+
   generateCard() {
     this._element = this._getTemplate();
     this._photoElement = this._element.querySelector(".card__photo");
@@ -46,7 +81,11 @@ export default class Card {
 
     this._likedButtonElement = this._element.querySelector(".card__like");
     this._deleteButtonElement = this._element.querySelector(".card__del-btn");
+    this.popupWithConfirm = document.querySelector(".popup__with-confirm")
 
+    this.likesCounter = this._element.querySelector(".likes-counter");
+    //this.quantityLikes = this.likes.length;
+    this.setLikesCounter(this.likes)
     this._setEventListeners();
 
     return this._element;

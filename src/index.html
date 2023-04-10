@@ -17,20 +17,16 @@
     </header>
     <main>
       <section class="profile lead">
-        <img
-          src="<%=require('./images/image.jpg')%>"
-          class="profile__foto"
-          alt="аватар профиля"
-        />
+        <div class="cover"><img src="" class="profile__foto" alt="аватар профиля" /></div>
         <div class="profile__name-edit">
-          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <h1 class="profile__name"></h1>
           <button
             aria-label="кнопка редактирования профиля."
             class="profile__edit-button"
             type="button"
           ></button>
         </div>
-        <p class="profile__activity">Исследователь океана</p>
+        <p class="profile__activity"></p>
         <button
           aria-label="кнопка добавления фотографий."
           class="profile__add-content-button"
@@ -134,6 +130,54 @@
         </form>
       </div>
     </div>
+    <div class="popup popup__change-avatar">
+      <div class="popup__container container__change-avatar">
+        <button
+          aria-label="кнопка закрытия всплывающего окна."
+          class="popup__close-button"
+          type="button"
+        ></button>
+        <form
+          name="change-avatar"
+          class="popup__form popup__change-avatar"
+          novalidate
+        >
+          <h2 class="popup__title">Обновить аватар</h2>
+          <fieldset class="popup__fieldset">
+            <label>
+              <input
+                type="url"
+                required
+                placeholder="Ссылка на картинку"
+                name="popup__input-card-link"
+                class="popup__input-card-link popup__input"
+              />
+              <span
+                class="popup__error-element popup__input-card-link-error popup__error-text"
+              ></span>
+            </label>
+            <button class="popup__save popup__add-photo-button" type="submit">
+              Сохранить
+            </button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup__with-confirm">
+      <div class="popup__container container__confirm">
+        <button
+          aria-label="кнопка закрытия всплывающего окна."
+          class="popup__close-button"
+          type="button"
+        ></button>
+        <form name="confirm" class="popup__form popup__form-confirm">
+          <h2 class="popup__title-confirm popup__title_confirm">Вы уверены?</h2>
+          <button class="popup__save popup__add-photo-button" type="submit">
+            Да
+          </button>
+        </form>
+      </div>
+    </div>
     <div class="popup popup_dark popup_bigphoto">
       <figure class="popup__figure">
         <button
@@ -150,17 +194,20 @@
       <li class="card">
         <button
           aria-label="кнопка удаления фотографии."
-          class="card__del-btn"
+          class="card__del-btn card__del-btn_invisibl"
           type="button"
         ></button>
         <img class="card__photo" />
         <div class="card__data">
           <h2 class="card__name"></h2>
-          <button
-            aria-label="кнопка нравится."
-            class="card__like"
-            type="button"
-          ></button>
+          <div>
+            <button
+              aria-label="кнопка нравится."
+              class="card__like"
+              type="button"
+            ></button>
+            <div class="likes-counter">0</div>
+          </div>
         </div>
       </li>
     </template>

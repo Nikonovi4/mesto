@@ -47,3 +47,30 @@
 @import url(../blocks/popup/__fieldset/popup__fieldset.css);
 @import url(../blocks/popup/__error-text/popup__error-text.css);
 @import url(../blocks/popup/__error-element/popup__error-element.css);
+
+.container__change-avatar {
+    width: 282px;
+    min-height: 200px;
+}
+@media screen and (min-width: 880px) {
+    .container__change-avatar {
+        width: 430px;
+        min-height: 272px;
+        padding-left: 35px;
+        padding-right: 36px;
+    }
+}
+
+.card__del-btn_invisibl {
+    display: none;
+}
+
+.container__confirm {
+    min-height: 180px;
+}
+
+.popup__title_confirm {
+    margin-bottom: 10px;
+    padding-top: 15px;
+}
+
