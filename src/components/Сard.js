@@ -84,7 +84,6 @@ export default class Card {
     this.popupWithConfirm = document.querySelector(".popup__with-confirm")
 
     this.likesCounter = this._element.querySelector(".likes-counter");
-    //this.quantityLikes = this.likes.length;
     this.setLikesCounter(this.likes)
     this._setEventListeners();
 
