@@ -1,0 +1,12 @@
+.container__newavatar {
+  width: 282px;
+  min-height: 200px;
+}
+@media screen and (min-width: 880px) {
+  .container__newavatar {
+    width: 430px;
+    min-height: 272px;
+    padding-left: 35px;
+    padding-right: 36px;
+  }
+}

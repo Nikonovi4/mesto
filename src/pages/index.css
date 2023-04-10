@@ -25,6 +25,7 @@
 @import url(../blocks/card/__like/card__like.css);
 @import url(../blocks/card/__like/_clicked/card__like_clicked.css);
 @import url(../blocks/card/__del-btn/card__del-btn.css);
+@import url(../blocks/card/__del-btn/_invisibl/card__del-btn_invisibl.css);
 
 @import url(../blocks/foto/foto.css);
 
@@ -37,6 +38,7 @@
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/__close-button/popup__close-button.css);
 @import url(../blocks/popup/__title/popup__title.css);
+@import url(../blocks/popup/_confirm/popup__title_confirm.css);
 @import url(../blocks/popup/__input/popup__input.css);
 @import url(../blocks/popup/__input/_type/popup__input_type_error.css);
 @import url(../blocks/popup/__save/popup__save.css);
@@ -47,30 +49,5 @@
 @import url(../blocks/popup/__fieldset/popup__fieldset.css);
 @import url(../blocks/popup/__error-text/popup__error-text.css);
 @import url(../blocks/popup/__error-element/popup__error-element.css);
-
-.container__change-avatar {
-    width: 282px;
-    min-height: 200px;
-}
-@media screen and (min-width: 880px) {
-    .container__change-avatar {
-        width: 430px;
-        min-height: 272px;
-        padding-left: 35px;
-        padding-right: 36px;
-    }
-}
-
-.card__del-btn_invisibl {
-    display: none;
-}
-
-.container__confirm {
-    min-height: 180px;
-}
-
-.popup__title_confirm {
-    margin-bottom: 10px;
-    padding-top: 15px;
-}
-
+@import url(../blocks/container/__newavatar/container__newavatar.css);
+@import url(../blocks/container/__confirm/container__confirm.css);
