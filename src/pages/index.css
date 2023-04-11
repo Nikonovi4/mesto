@@ -49,5 +49,6 @@
 @import url(../blocks/popup/__fieldset/popup__fieldset.css);
 @import url(../blocks/popup/__error-text/popup__error-text.css);
 @import url(../blocks/popup/__error-element/popup__error-element.css);
-@import url(../blocks/container/_newavatar/container_newavatar.css);
-@import url(../blocks/container/__confirm/container__confirm.css);
+@import url(../blocks/popup/__container/_content/popup__container_new-avatar.css);
+@import url(../blocks/popup/__container/_content/popup__container_confirm.css);
+

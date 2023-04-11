@@ -1,0 +1,13 @@
+.popup__container_new-avatar {
+    width: 282px;
+    min-height: 200px;
+  }
+  @media screen and (min-width: 880px) {
+    .popup__container_new-avatar {
+      width: 430px;
+      min-height: 272px;
+      padding-left: 35px;
+      padding-right: 36px;
+    }
+  }
+  
