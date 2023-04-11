@@ -1,15 +1,15 @@
 import "core-js/actual";
-import "./pages/index.css";
+import "./index.css";
 
-import Card from "./components/Сard.js";
-import Section from "./components/Section.js";
-import PopupWithImage from "./components/PopupWithImage.js";
-import PopupWithForm from "./components/PopupWihtForm.js";
-import UserInfo from "./components/UserInfo.js";
-import PopupWithConfirm from "./components/PopupWithConfirm.js";
-import Api from "./components/Api.js";
+import Card from "../components/Сard.js";
+import Section from "../components/Section.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import PopupWithForm from "../components/PopupWihtForm.js";
+import UserInfo from "../components/UserInfo.js";
+import PopupWithConfirm from "../components/PopupWithConfirm.js";
+import Api from "../components/Api.js";
 
-import { validationConfig, FormValidator } from "./components/FormValidator.js";
+import { validationConfig, FormValidator } from "../components/FormValidator.js";
 
 import {
   popupEditProfile,
@@ -20,7 +20,9 @@ import {
   activityInput,
   profileName,
   pofileActivity
-} from "./utils/constants.js";
+} from "../utils/constants.js";
+
+
 
 const profileValidatior = new FormValidator(popupEditProfile, validationConfig);
 const newCardValidatior = new FormValidator(formNewPhoto, validationConfig);
@@ -65,7 +67,6 @@ function createCard(name, link, likes, myUserId, cardId, ownerId) {
     ownerId
   );
   const cardElement = photo.generateCard();
-  photo.setLikesCounter(likes);
   photo.showDeleteButton();
 
   return cardElement;
@@ -93,7 +94,7 @@ bigSizePhoto.setEventListeners();
 
 const profileEditForm = new PopupWithForm(".popup_profile", {
   callBackSubmit: (info) => {
-    changeAvatarForm.replaceButtonText("Сохранение...");
+    profileEditForm.replaceButtonText("Сохранение...");
     api
       .editProfile(info["popup__input-name"], info["popup__input-activity"])
       .then((res) => {
@@ -107,14 +108,14 @@ const profileEditForm = new PopupWithForm(".popup_profile", {
         console.log(`Ошибка ${err}`)
       })
       .finally(() => {
-        changeAvatarForm.replaceButtonText("Сохранить")
+        profileEditForm.replaceButtonText("Сохранить")
       })
     }
   });
 
 const addNewPhotoForm = new PopupWithForm(".popup_add-photo", {
   callBackSubmit: (info) => {
-    changeAvatarForm.replaceButtonText("Сохранение...");
+    addNewPhotoForm.replaceButtonText("Сохранение...");
     api
       .addNewCard(
         info["popup__input-card-name"],
@@ -130,12 +131,13 @@ const addNewPhotoForm = new PopupWithForm(".popup_add-photo", {
           res.owner._id
         );
         photos.addItems(newPhoto);
+        addNewPhotoForm.close();
       })
       .catch((err) => {
         console.log(`Ошибка ${err}`)
       })
       .finally(() => {
-        changeAvatarForm.replaceButtonText("Сохранить");
+        addNewPhotoForm.replaceButtonText("Сохранить");
     })
   }
 })
@@ -204,6 +206,7 @@ const changeAvatarForm = new PopupWithForm(".popup_newavatar", {
     api.editAvatar(linkAvatarinput.value).then(() => {
       api.getProfileInfo().then((res) => {
         profilePhoto.src = res.avatar;
+        changeAvatarForm.close()
       })
       .catch((err) => {
         console.log(`Ошибка ${res.status}`)
