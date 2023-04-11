@@ -189,7 +189,7 @@ Promise.all([api.getProfileInfo(), api.getAllCards()])
   });
 
 const profilePhoto = document.querySelector(".profile__foto");
-const popupChangeAvatarForm = document.querySelector(".popup__newavatar");
+const popupChangeAvatarForm = document.querySelector(".popup_newavatar");
 const newAvatarFormValidatior = new FormValidator(
   popupChangeAvatarForm,
   validationConfig
@@ -198,7 +198,7 @@ newAvatarFormValidatior.enableValidation();
 
 const linkAvatarinput = popupChangeAvatarForm.querySelector(".popup__input");
 
-const changeAvatarForm = new PopupWithForm(".popup__newavatar", {
+const changeAvatarForm = new PopupWithForm(".popup_newavatar", {
   callBackSubmit: () => {
     changeAvatarForm.replaceButtonText("Сохранение...");
     api.editAvatar(linkAvatarinput.value).then(() => {
